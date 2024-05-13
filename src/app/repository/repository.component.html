@@ -1,0 +1,30 @@
+<!-- Display user details -->
+<div class='flex flex-col justify-center items-center w-[90%]'>
+  <div *ngIf="userData">
+    <!-- Add user details here if needed -->
+  </div>
+
+  <!-- Display repositories -->
+  <div class='flex flex-wrap justify-center items-center'>
+    <div *ngFor="let repo of repositories">
+      <div class='w-[45%]'>
+        <div class='w-[35rem] h-[10rem] border-solid border-2 border-black m-2 p-2'>
+          <a [href]="repo.html_url" class='text-blue-500 uppercase font-extrabold'>{{ repo.name }}</a>
+          <p>Description: {{ repo.description || 'No Description' }}</p>
+        </div>
+      </div>
+      <!-- Add more repository details as needed -->
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class='flex gap-2'>
+    <button class='w-[8rem] bg-gray-200 text-black p-3 rounded-full' (click)="prevPage()" [disabled]="page === 1">
+      Older
+    </button>
+      
+    <button class='w-[8rem] bg-blue-700 text-white p-3 rounded-full' (click)="nextPage()">
+      Newer
+    </button>
+  </div>
+</div>

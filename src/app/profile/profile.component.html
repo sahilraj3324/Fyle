@@ -1,0 +1,19 @@
+<!-- profile.component.html -->
+<div class="w-[40rem] h-[15rem] border-double border-4 p-2">
+    <div class='flex row'>
+        <div *ngIf="userData">
+            <div class="flex">
+            <img class='h-[12rem] w-[12rem] rounded-full border-double border-4 border-sky-500' [src]="userData.avatar_url"
+                alt="{{ userData.login }}'s profile" />
+            <div class="p-9">
+                <p class='text-xl'>{{ userData.name }}</p>
+                <p>Username: {{ userData.login }}</p>
+                <p>Bio: {{ userData.bio }}</p>
+                <p>Followers: {{ userData.followers }}</p>
+                <p>Following: {{ userData.following }}</p>
+                <!-- Add more user details as needed -->
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
